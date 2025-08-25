@@ -354,8 +354,8 @@ jobs:
             cd /home/${{ env.SERVICE_NAME }}_user/\$REPO_DIR
             if [[ -f 'docker-compose.yml' ]]; then
               docker-compose restart
-            elif [[ '${{ env.SERVICE_NAME }}' =~ ^fks- ]]; then
-              SERVICE_TYPE='${SERVICE_NAME#fks-}'
+            elif [[ '${{ env.SERVICE_NAME }}' =~ ^fks_ ]]; then
+              SERVICE_TYPE='${SERVICE_NAME#fks_}'
               if [[ -f \"docker-compose.\$SERVICE_TYPE.yml\" ]]; then
                 docker-compose -f \"docker-compose.\$SERVICE_TYPE.yml\" restart
               else
