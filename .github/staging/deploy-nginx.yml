@@ -5,7 +5,7 @@ name: Deploy to nginx.7gram.xyz
 on:
   # Trigger on push to main/master branch
   push:
-    branches: [ main, master ]
+    branches: [ main ]
     paths:
       - 'config/nginx/**'
       - 'html/**'
